@@ -88,12 +88,21 @@ module mersenne_twister
 !     http://www.coyotegulch.com
 !
 !-----------------------------------------------------------------------
-  use stdtypes
+  ! use stdtypes
   !
   implicit none
   !-------------------------------------------------------------------
   ! Everything is private unless explicitly made public
   private
+  !
+  ! Kind types for 64-, 32-, 16-, and 8-bit signed integers
+  integer, parameter, public :: INT64 = selected_int_kind(18)
+  integer, parameter, public :: INT32 = selected_int_kind(9)
+  ! integer, parameter :: INT16 = selected_int_kind(4) ! Not used
+  ! integer, parameter :: INT08 = selected_int_kind(2) ! Not used
+  ! Kind types for IEEE 754/IEC 60559 single- and double-precision reals
+  integer, parameter, public :: IEEE32 = selected_real_kind( 6, 37 )
+  integer, parameter, public :: IEEE64 = selected_real_kind( 15, 307 )
   !
   public :: mtprng_state, &
             mtprng_init, mtprng_init_by_array, &

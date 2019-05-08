@@ -1,6 +1,7 @@
 program test1
   !
-  use stdtypes
+  ! use stdtypes
+  use mersenne_twister, only : int32,int64,ieee32,ieee64
   use mersenne_twister, only : mtprng_state
   use mersenne_twister, only : mtprng_init,mtprng_rand_real1,mtprng_rand_real3
   !
